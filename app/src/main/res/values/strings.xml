@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Dziwna aplikacja</string>
+    <string name="showDogSwitch">Display this cute dog</string>
+    <string name="button">Button</string>
+    <string name="rateText">Rate him!</string>
+    <string name="reviewEditTextPrompt">Write here some nice words!</string>
+    <string name="sendButton">Send your review (well, not actually)</string>
+    <string name="dogContentDescription">Look at him, oooooh.</string>
+    <string name="goRateDog">Rate some dogs</string>
+    <string name="messageSent">Your review has not been sent!</string>
+    <string name="goTimers">Place timers</string>
+    <string name="mainTitleText">SWiM-1</string>
+    <string name="back">Back</string>
+    <string name="addNewTimerText">Add new timer</string>
+    <string name="exit">Exit</string>
+    <string name="timerEditText">New timer</string>
+    <string name="goWhereYouSelected">Go there!</string>
+    <string name="timerListLabelText">Timers (max 4)</string>
+</resources>
