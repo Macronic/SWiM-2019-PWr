@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp" android:src="@drawable/dog_photo"
+            android:id="@+id/dogView" android:contentDescription="@string/dogContentDescription"
+            android:visibility="invisible"
+            android:scaleType="fitStart"
+            android:layout_gravity="center_horizontal"/>
+    <Switch
+            android:text="@string/showDogSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/showDogSwitch" android:checked="false"
+            android:layout_weight="0.05"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textShortMessage"
+            android:text="@string/reviewEditTextPrompt"
+            android:ems="10"
+            android:id="@+id/reviewEditText"
+            android:layout_weight="0.2"/>
+    <TextView
+            android:text="@string/rateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rateDogTitle"
+            android:textAppearance="@style/AppTheme.Title"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.05"/>
+    <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/dogRatingBar"
+            android:layout_gravity="center_horizontal"
+            android:numStars="5"
+            android:stepSize="0.5"/>
+    <Button
+            android:text="@string/sendButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/sendButton"
+            android:onClick="onSendButtonClick"
+            android:layout_weight="0.075"/>
+    <Button
+            android:text="@string/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/rateDogBackButton"
+            android:onClick="onBackButtonClick"
+            android:layout_weight="0.075"/>
+</LinearLayout>

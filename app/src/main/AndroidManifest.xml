@@ -3,6 +3,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.example.swim_1">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/app_icon"
@@ -11,16 +13,22 @@
             android:supportsRtl="true"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
+                android:name=".RunTimerActivity"
+                android:label="@string/title_activity_run_timer"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
                 android:name=".RateDogActivity"
                 android:screenOrientation="portrait"
-                android:theme="@style/AppTheme"
-                android:windowSoftInputMode="adjustResize">
+                android:theme="@style/RateDogTheme"
+                android:windowSoftInputMode="stateUnchanged">
         </activity>
         <activity
                 android:name=".TimersActivity"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme"
-                android:windowSoftInputMode="adjustResize">
+                android:windowSoftInputMode="stateUnchanged">
         </activity>
         <activity
                 android:name=".MainActivity"

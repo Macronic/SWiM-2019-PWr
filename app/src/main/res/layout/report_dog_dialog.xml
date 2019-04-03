@@ -6,7 +6,8 @@
 
     <TextView
             android:text="@string/reportDogDialogTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:theme="@style/AppTheme.Title"
             android:layout_height="wrap_content" android:id="@+id/textView"
             android:layout_gravity="center_horizontal" android:layout_weight="1"/>
     <Spinner
