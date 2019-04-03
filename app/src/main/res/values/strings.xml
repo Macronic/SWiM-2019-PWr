@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dziwna aplikacja</string>
+    <string name="appName">Dziwna aplikacja</string>
     <string name="showDogSwitch">Display this cute dog</string>
     <string name="button">Button</string>
     <string name="rateText">Rate him!</string>
@@ -11,9 +11,24 @@
     <string name="goTimers">Place timers</string>
     <string name="mainTitleText">SWiM-1</string>
     <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
     <string name="addNewTimerText">Add new timer</string>
     <string name="exit">Exit</string>
     <string name="timerEditText">New timer</string>
     <string name="goWhereYouSelected">Go there!</string>
     <string name="timerListLabelText">Timers (max 4)</string>
+
+
+    <string name="reportDogEditTextHint">Additional information</string>
+    <string name="reportDogDialogTitle">Report this dog</string>
+    <string name="reportDogConfirmation">Report him!</string>
+    <string name="reportDogToast">This dog has been reported!</string>
+
+    <string-array name="reportDogTypes">
+        <item>Too cute</item>
+        <item>Not a dog</item>
+        <item>Too smoll</item>
+        <item>Cannot fetch</item>
+    </string-array>
+
 </resources>

@@ -1,12 +1,10 @@
 package com.example.swim_1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import android.view.LayoutInflater
-import kotlinx.android.synthetic.main.activity_ratedog.*
-import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_ratedog.*
 import kotlinx.android.synthetic.main.dog_toast_view.*
 
 
@@ -36,7 +34,7 @@ class RateDogActivity : AppCompatActivity() {
     }
 
     fun onDogLongClick(view : android.view.View): Boolean {
-        var toast = Toast(this)
+        val toast = Toast(this)
         toast.view = layoutInflater.inflate(R.layout.dog_toast_view, dogToastView)
         toast.show()
         return true

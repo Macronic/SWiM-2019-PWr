@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+    <TextView
+            android:text="@string/reportDogDialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView"
+            android:layout_gravity="center_horizontal" android:layout_weight="1"/>
+    <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/spinner"
+            android:entries="@array/reportDogTypes"
+            android:layout_weight="1"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:inputType="textPersonName"
+
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:hint="@string/reportDogEditTextHint" android:layout_weight="4"/>
+</LinearLayout>

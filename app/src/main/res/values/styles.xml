@@ -11,4 +11,8 @@
         <item name="android:textColor">@color/titleColor</item>
     </style>
 
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/ic_dziwny_pies</item>
+    </style>
+
 </resources>
