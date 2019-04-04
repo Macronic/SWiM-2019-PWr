@@ -8,7 +8,6 @@ import androidx.fragment.app.DialogFragment
 
 class ReportDogDialogFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-
         return activity?.let {
             val builder = AlertDialog.Builder(it)
 

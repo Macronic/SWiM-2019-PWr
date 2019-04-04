@@ -25,8 +25,8 @@ class RunTimerActivityFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val layout = inflater.inflate(R.layout.fragment_timer, container, false)
 
-        layout.findViewById<TextView>(R.id.timerTitle).text = name
-        layout.findViewById<TextView>(R.id.timerTime).text = "03:20:14"
+        layout.findViewById<TextView>(R.id.timerTitle).text = "03:20:14"
+        layout.findViewById<TextView>(R.id.timerTime).text = name
         Log.d("timers", "new fragment name " + name)
         return layout
     }

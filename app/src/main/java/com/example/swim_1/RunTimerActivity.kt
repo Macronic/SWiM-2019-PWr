@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_run_timer.*
 class RunTimerActivity : FragmentActivity() {
 
     var timers : MutableList<String> = ArrayList()
+    var first = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +23,11 @@ class RunTimerActivity : FragmentActivity() {
     }
 
     private fun nextTimer() {
-        val newTimerIndex = supportFragmentManager.fragments.size
+        var newTimerIndex = supportFragmentManager.backStackEntryCount
+
+        if (!first) {
+            newTimerIndex += 1
+        }
 
         if (newTimerIndex >= timers.size) {
             Toast.makeText(this, R.string.noMoreTimers, Toast.LENGTH_SHORT).show()
@@ -30,10 +35,16 @@ class RunTimerActivity : FragmentActivity() {
         }
 
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(RunTimerActivityFragment.newInstance(timers[newTimerIndex]), "timerFragment")
-        if (newTimerIndex != 0) {
+
+        if (!first) {
             transaction.addToBackStack("newTimerBackStack")
         }
+
+        first = false
+
+
+        transaction.replace(R.id.fragment2, RunTimerActivityFragment.newInstance(timers[newTimerIndex]))
+
         transaction.commit()
     }
 

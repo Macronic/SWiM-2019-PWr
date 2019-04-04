@@ -42,7 +42,7 @@
         <item>Too smoll</item>
         <item>Cannot fetch</item>
     </string-array>
-    
+
     <string name="title_activity_run_timer">RunTimerActivity</string>
     <string name="action_settings">Settings</string>
 
