@@ -8,19 +8,18 @@
         tools:context=".TakePhotoActivity" android:orientation="vertical">
 
     <TextureView
-            android:layout_width="wrap_content"
-            android:layout_height="605dp"
-            android:id="@+id/cameraView" android:layout_weight="0.9"/>
+            android:layout_width="match_parent"
+            android:id="@+id/cameraView" android:layout_weight="0.9" android:layout_height="0dp"/>
     <Button
             android:text="@string/internalSave"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/internalSaveButton" android:layout_weight="0.2"/>
+            android:layout_height="0dp" android:id="@+id/internalSaveButton" android:layout_weight="0.1"/>
     <Button
             android:text="@string/externalSave"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/externalSaveButton" android:layout_weight="0.2"/>
+            android:layout_height="0dp" android:id="@+id/externalSaveButton" android:layout_weight="0.1"/>
     <Button
             android:text="@string/back"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/backButton" android:layout_weight="0.2"/>
+            android:layout_height="0dp" android:id="@+id/backButton" android:layout_weight="0.1"/>
 </LinearLayout>

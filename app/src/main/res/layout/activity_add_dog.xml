@@ -9,7 +9,7 @@
 
     <TextView
             android:text="@string/addDogTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:theme="@style/AppTheme.Title"
             android:layout_height="wrap_content" android:id="@+id/textView2"
             android:layout_gravity="center"
@@ -23,22 +23,22 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText3" android:hint="@string/dogNameHint"/>
+            android:id="@+id/nameEditText" android:hint="@string/dogNameHint"/>
     <EditText
             android:layout_width="match_parent"
             android:layout_height="155dp"
             android:inputType="textMultiLine"
             android:gravity="start|top"
             android:ems="10"
-            android:id="@+id/editText4" android:layout_weight="0.2" android:hint="@string/dogDescriptionHint"/>
+            android:id="@+id/descriptionEditText" android:layout_weight="0.2" android:hint="@string/dogDescriptionHint"/>
     <Switch
             android:text="@string/fetchSwitchText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/switch1" android:layout_weight="0.03"/>
+            android:layout_height="wrap_content" android:id="@+id/fetchSwitch" android:layout_weight="0.03"/>
     <Button
             android:text="@string/addDogButtonText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="0.05"/>
+            android:layout_height="wrap_content" android:id="@+id/addToDatabaseButton" android:layout_weight="0.05"/>
     <Button
             android:text="@string/back"
             android:layout_width="match_parent"

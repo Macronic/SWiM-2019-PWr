@@ -1,22 +1,22 @@
 package com.example.swim_1
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.example.swim_1.DogDatabase.DogInfo
+import com.example.swim_1.DogDatabase.DogRepository
 import kotlinx.android.synthetic.main.activity_ratedog.*
-
-
 
 
 class RateDogActivity : AppCompatActivity() {
 
     private lateinit var dogRatingAdapter: DogRatingAdapter
 
+    var currentItem = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ratedog)
@@ -26,27 +26,19 @@ class RateDogActivity : AppCompatActivity() {
 
         dogRatingAdapter = DogRatingAdapter(supportFragmentManager)
         dogPager.adapter = dogRatingAdapter
-        dogRatingAdapter.addDoggo(
-            DogInfo(0,
-                "Fine doggo",
-                "https://www.akc.org/wp-content/themes/akc/component-library/assets/img/welcome.jpg",
-                true
-            )
-        )
-        dogRatingAdapter.addDoggo(
-            DogInfo(1,
-                "Other doggo",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Bow_bow.jpg/150px-Bow_bow.jpg",
-                true
-            )
-        )
-        dogRatingAdapter.addDoggo(
-            DogInfo(2,
-                "Weird doggo",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1024px-Cat03.jpg",
-                false
-            )
-        )
+
+        DogRepository(application).getDogs().observe(this, object : Observer<List<DogInfo>> {
+            override fun onChanged(doggos : List<DogInfo>?) {
+                dogRatingAdapter.removeDoggos()
+                doggos ?: return
+
+                for (dog in doggos) {
+                    dogRatingAdapter.addDoggo(dog)
+                }
+
+            }
+        })
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -54,21 +46,7 @@ class RateDogActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onPause() {
-        val sharedPref = getPreferences(Context.MODE_PRIVATE)
-        val editor = sharedPref.edit()
-        editor.putInt("selectedPage", dogPager.currentItem)
-        editor.apply()
-        super.onPause()
-    }
-
-    override fun onResume() {
-        val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
-        dogPager.setCurrentItem(sharedPref.getInt("selectedPage", 0), false)
-        super.onResume()
-    }
-
-    private fun selectedDoggo() : DogInfo {
+    private fun selectedDoggo() : DogInfo? {
         return dogRatingAdapter.getDoggo(dogPager.currentItem)
     }
 
@@ -79,10 +57,12 @@ class RateDogActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when(item.itemId) {
         R.id.fetchTest -> {
             val selected = selectedDoggo()
-            if (selected.canFetch) {
-                Toast.makeText(this, R.string.dogDoesFetch, Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, R.string.dogCannotFetch, Toast.LENGTH_SHORT).show();
+            if (selected != null) {
+                if (selected.canFetch) {
+                    Toast.makeText(this, R.string.dogDoesFetch, Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, R.string.dogCannotFetch, Toast.LENGTH_SHORT).show();
+                }
             }
             true
         }

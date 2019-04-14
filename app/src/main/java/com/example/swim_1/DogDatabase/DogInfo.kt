@@ -5,8 +5,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class DogInfo (
-    @PrimaryKey val uid: Int = 0,
+class DogInfo (@PrimaryKey(autoGenerate = true)
+               val uid: Int,
     @ColumnInfo(name = "name") val name : String,
     @ColumnInfo(name = "photo") val pathToPhoto : String,
     @ColumnInfo(name = "can_fetch") val canFetch : Boolean)

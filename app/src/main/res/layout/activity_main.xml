@@ -44,6 +44,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/rateSomeDogsRadioButton"/>
         <RadioButton
+                android:text="@string/resetDogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/resetDogsRadioButton"/>
+        <RadioButton
                 android:text="@string/exit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/exitRadioButton"/>

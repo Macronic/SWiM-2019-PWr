@@ -14,8 +14,14 @@ class DogRatingAdapter(fragmentManager : FragmentManager) : FragmentStatePagerAd
         notifyDataSetChanged()
     }
 
-    fun getDoggo(i: Int) : DogInfo {
+    fun getDoggo(i: Int) : DogInfo? {
+        if (doggos.size <= i) return null
+
         return doggos[i]
+    }
+
+    fun removeDoggos() {
+        doggos.clear()
     }
 
     override fun getCount(): Int = doggos.count()

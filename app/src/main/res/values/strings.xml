@@ -7,6 +7,7 @@
     <string name="sendButton">Send your review (well, not actually)</string>
     <string name="dogContentDescription">Look at him, oooooh.</string>
     <string name="goRateDog">Rate some dogs</string>
+    <string name="resetDogs">Reset the database</string>
     <string name="messageSent">Your review has not been sent!</string>
     <string name="goTimers">Place timers</string>
     <string name="mainTitleText">SWiM-1</string>

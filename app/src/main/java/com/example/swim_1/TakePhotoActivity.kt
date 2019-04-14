@@ -2,6 +2,7 @@ package com.example.swim_1
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.ImageFormat
 import android.graphics.SurfaceTexture
@@ -17,6 +18,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.swim_1.AddDogActivity.Companion.photoPathDataName
 import kotlinx.android.synthetic.main.activity_take_photo.*
 import java.io.File
 import java.io.FileOutputStream
@@ -31,7 +33,6 @@ class TakePhotoActivity : AppCompatActivity() {
     var usedCameraId = ""
     var camera : CameraDevice? = null
     var cameraCaptureSessions: CameraCaptureSession? = null
-    var captureRequest: CaptureRequest? = null
     var captureRequestBuilder: CaptureRequest.Builder? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +46,6 @@ class TakePhotoActivity : AppCompatActivity() {
     private val cameraStateCallback = object : CameraDevice.StateCallback() {
         override fun onOpened(camera: CameraDevice?) {
             this@TakePhotoActivity.camera = camera
-            Toast.makeText(this@TakePhotoActivity, "KAMERA ODPALONA", Toast.LENGTH_LONG).show()
             createCameraPreview()
         }
         override fun onClosed(camera: CameraDevice?) {
@@ -109,8 +109,6 @@ class TakePhotoActivity : AppCompatActivity() {
         override fun onSurfaceTextureUpdated(texture: SurfaceTexture) = Unit
     }
 
-    val onImageAvailableListener = ImageReader.OnImageAvailableListener { }
-
     protected fun updatePreview() {
         camera ?: return
         val captureRequestBuilder = this.captureRequestBuilder
@@ -145,7 +143,7 @@ class TakePhotoActivity : AppCompatActivity() {
         val captureBuilder = camera.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE)
         captureBuilder.addTarget(reader.surface)
         captureBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO)
-
+        captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, (windowManager.defaultDisplay.rotation + 90) % 360)
         reader.setOnImageAvailableListener( {
             var image: Image? = null
             try {
@@ -165,6 +163,9 @@ class TakePhotoActivity : AppCompatActivity() {
 
         val captureCompletedListener =  object : CameraCaptureSession.CaptureCallback() {
             override fun onCaptureCompleted(session: CameraCaptureSession, request: CaptureRequest, result: TotalCaptureResult) {
+                val intent = Intent()
+                intent.putExtra(photoPathDataName, file.absolutePath)
+                setResult(RESULT_OK, intent)
                 finish()
             }
         }
