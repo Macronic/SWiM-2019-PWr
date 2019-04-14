@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import com.example.swim_1.DogDatabase.DogInfo
 
 class DogRatingAdapter(fragmentManager : FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
     private val doggos : ArrayList<DogInfo> = ArrayList()

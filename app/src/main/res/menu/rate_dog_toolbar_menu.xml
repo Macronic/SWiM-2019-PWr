@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <item android:title="@string/fetchTestMenuItem" android:id="@+id/fetchTest" android:icon="@drawable/ic_stick"
+          app:showAsAction="ifRoom"/>
+    <item android:title="@string/addDogTitle" android:id="@+id/addNewDogMenu"
+          android:icon="@android:drawable/ic_menu_add"
           app:showAsAction="ifRoom"/>
     <item android:title="@string/petDogMenuItem" android:id="@+id/petDog"/>
     <item android:title="@string/reportDogMenuItem" android:id="@+id/reportDogMenuItem"/>

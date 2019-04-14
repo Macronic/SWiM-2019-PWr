@@ -14,7 +14,7 @@ class TimersActivity : AppCompatActivity() {
     lateinit var recyclerAdapter : TimerRecyclerAdapter
     lateinit var recyclerManager : RecyclerView.LayoutManager
 
-    val timers : ArrayList<String> = ArrayList()
+    private val timers : ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

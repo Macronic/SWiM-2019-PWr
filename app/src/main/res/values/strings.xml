@@ -43,6 +43,15 @@
         <item>Cannot fetch</item>
     </string-array>
 
+    <string name="addDogTitle">Add dog</string>
+    <string name="dogNameHint">Name</string>
+    <string name="dogDescriptionHint">Description</string>
+    <string name="fetchSwitchText">Able to fetch</string>
+    <string name="addDogButtonText">Add him to the database</string>
+
+    <string name="externalSave">Save to external memory</string>
+    <string name="internalSave">Save to internal memory</string>
+
     <string name="title_activity_run_timer">RunTimerActivity</string>
     <string name="action_settings">Settings</string>
 
